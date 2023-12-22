@@ -1,6 +1,8 @@
-import React from "react"
+type ButtonProps = {
+  text: string
+}
 
-const Button = ({ text }) => {
+const Button = ({ text }: ButtonProps) => {
   return (
     <a
       href="#_"
