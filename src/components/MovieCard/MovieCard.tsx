@@ -26,11 +26,20 @@ const MovieCategory = ({ list }: MovieCardProps) => {
   console.log("movie", list, movie)
 
   return (
-    <div>
+    <div className="">
       <h1>{list}</h1>
-      {movie.data.map((res: MovieDetail) => (
-        <div>{res.original_title}</div>
-      ))}
+      <div className="flex flex-wrap gap-5 h-72 w-screen overflow-x-auto">
+        {movie.data.map((res: MovieDetail) => (
+          <div className=" " key={`${list} movie ${res.title}`}>
+            {/* <div>{res.title}</div> */}
+            <img
+              className="rounded-lg"
+              src={`https://image.tmdb.org/t/p/w185${res.poster_path}`}
+              alt="movie_image"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

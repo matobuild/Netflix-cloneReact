@@ -1,5 +1,5 @@
 import { create } from "zustand"
-import { IMovieListResponse, MovieDetail } from "../interface/movieList"
+import { MovieDetail } from "../interface/movieList"
 
 const initStore = {
   movie: {
