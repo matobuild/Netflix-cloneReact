@@ -7,7 +7,7 @@ export const handleResponse = {
       data: res.data,
     }
   },
-  error: (res: AxiosError<AxiosResponse>): IResponse => {
+  error: (res: AxiosError<AxiosResponse>) => {
     if (res.message == "Network Error") {
       return {
         status: 500,
