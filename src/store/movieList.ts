@@ -1,27 +1,50 @@
 import { create } from "zustand"
 import { MovieDetail } from "../interface/movieList"
+import { ListType } from "../utils/constant"
 
-const initStore = {
-  movie: {
+const initStore: Record<ListType, movieTypeDetails> = {
+  [ListType.now_playing]: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  [ListType.popular]: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  [ListType.topRated]: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  [ListType.Upcoming]: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  [ListType.list]: {
     data: [],
     loading: false,
     error: null,
   },
 }
 
-type movieType = {
+type movieTypeDetails = {
   data: MovieDetail[]
   loading: boolean
   error: null | any
 }
 
 type useMovieListStoreType = {
-  movie: movieType
+  movie: Record<string, movieTypeDetails>
 
-  setMovieList: (value: movieType) => void
+  setMovieList: (list: ListType, value: movieTypeDetails) => void
 }
 
 export const useMovieListStore = create<useMovieListStoreType>((set) => ({
-  ...initStore,
-  setMovieList: (value: movieType) => set({ movie: value }),
+  movie: initStore,
+
+  setMovieList: (list: ListType, value: movieTypeDetails) =>
+    set((state) => ({ movie: { ...state.movie, [list]: value } })),
 }))

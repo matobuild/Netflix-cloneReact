@@ -16,7 +16,11 @@ const MovieCategory = ({ list }: MovieCardProps) => {
     console.log("data", data.data)
 
     if (data && data.data) {
-      setMovieList({ data: data.data.results, loading: false, error: null })
+      setMovieList(list, {
+        data: data.data.results,
+        loading: false,
+        error: null,
+      })
     }
   }
 
@@ -28,8 +32,8 @@ const MovieCategory = ({ list }: MovieCardProps) => {
   return (
     <div className="">
       <h1>{list}</h1>
-      <div className="flex flex-wrap gap-5 h-72 w-screen overflow-x-auto">
-        {movie.data.map((res: MovieDetail) => (
+      <div className=" gap-5 h-72 w-screen overflow-x-auto">
+        {movie[list].data.map((res: MovieDetail) => (
           <div className=" " key={`${list} movie ${res.title}`}>
             {/* <div>{res.title}</div> */}
             <img
