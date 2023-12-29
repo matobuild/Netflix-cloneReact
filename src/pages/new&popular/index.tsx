@@ -1,9 +1,5 @@
-import React from 'react'
-
-const New&PopularPage = () => {
-  return (
-    <div>New&PopularPage</div>
-  )
+const NewAndPopularPage = () => {
+  return <div>NewAndPopularPagee</div>
 }
 
-export default New&PopularPage
+export default NewAndPopularPage
