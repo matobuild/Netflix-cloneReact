@@ -1,4 +1,6 @@
+import MovieCardFullPage from "../../components/MovieCardFullPage/MovieCardFullPage"
 import Navbar from "../../components/Navbar"
+import { ListType } from "../../utils/constant"
 
 const TVShowPage = () => {
   return (
@@ -6,6 +8,7 @@ const TVShowPage = () => {
       <Navbar />
 
       <div>TVShowPage</div>
+      <MovieCardFullPage list={ListType.tvDiscover} />
     </div>
   )
 }

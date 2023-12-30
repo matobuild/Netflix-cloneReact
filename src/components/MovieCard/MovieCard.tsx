@@ -33,7 +33,10 @@ const MovieCategory = ({ list }: MovieCardProps) => {
   const { movie, setMovieList } = useMovieListStore()
 
   const getMovieData = async () => {
-    const data = await MovieListServices.getMovieList(list)
+    const data =
+      list == ListType.movieDiscover
+        ? await MovieListServices.getMovieList(list)
+        : await MovieListServices.getTvDiscoverList(list)
     console.log("data", data.data)
 
     if (data && data.data) {

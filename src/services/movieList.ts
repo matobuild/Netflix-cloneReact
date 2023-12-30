@@ -25,9 +25,19 @@ export const MovieListServices = {
     value: ListType
   ): Promise<IGetMovieListResponse> => {
     try {
-      const response = await axios.get(
-        BASE_URL + value + "/" + MOVIE_URL + API_KEY
-      )
+      const response = await axios.get(BASE_URL + value + API_KEY)
+      console.log(response)
+      return handleResponse.success(response)
+    } catch (error: any) {
+      console.error(error)
+      return handleResponse.error(error)
+    }
+  },
+  getTvDiscoverList: async (
+    value: ListType
+  ): Promise<IGetMovieListResponse> => {
+    try {
+      const response = await axios.get(BASE_URL + value + API_KEY)
       console.log(response)
       return handleResponse.success(response)
     } catch (error: any) {

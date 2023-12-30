@@ -9,7 +9,8 @@ export enum ListType {
   topRated = "top_rated",
   Upcoming = "upcoming",
   list = "list",
-  discover = "discover",
+  movieDiscover = "discover/movie",
+  tvDiscover = "discover/tv",
 }
 
 export const API_KEY = "?api_key=9fffd9d7141016b347c2450508406f8c"

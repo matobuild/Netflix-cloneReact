@@ -28,7 +28,12 @@ const initStore: Record<ListType, movieTypeDetails> = {
     loading: false,
     error: null,
   },
-  [ListType.discover]: {
+  [ListType.movieDiscover]: {
+    data: [],
+    loading: false,
+    error: undefined,
+  },
+  [ListType.tvDiscover]: {
     data: [],
     loading: false,
     error: undefined,

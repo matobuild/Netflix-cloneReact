@@ -7,7 +7,7 @@ const MovieShowPage = () => {
     <div className=" bg-black text-white w-full">
       <Navbar />
       <div>MovieShowPage DISCOVER MOVIE</div>
-      <MovieCardFullPage list={ListType.discover} />
+      <MovieCardFullPage list={ListType.movieDiscover} />
     </div>
   )
 }
