@@ -13,6 +13,7 @@ function App() {
     { path: "/tvShow", element: <TVShowPage /> },
     { path: "/movies", element: <MovieShowPage /> },
     { path: "/newAndPopular", element: <NewAndPopularPage /> },
+    { path: "/detail/:name", element: <DetailPage /> },
   ])
   return (
     <div className="">

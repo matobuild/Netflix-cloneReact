@@ -6,6 +6,7 @@ import { MovieDetail } from "../../interface/movieList"
 
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
+import { Link } from "react-router-dom"
 
 const responsive = {
   desktop: {
@@ -72,11 +73,13 @@ const MovieCategory = ({ list }: MovieCardProps) => {
       >
         {movie[list].data.map((res: MovieDetail) => (
           <div key={`${list} movie ${res.title}`}>
-            <img
-              className="rounded-lg"
-              src={`https://image.tmdb.org/t/p/w185${res.poster_path}`}
-              alt="movie_image"
-            />
+            <Link to={`/detail/${res.title}`} state={{ id: res.id }}>
+              <img
+                className="rounded-lg"
+                src={`https://image.tmdb.org/t/p/w185${res.poster_path}`}
+                alt="movie_image"
+              />
+            </Link>
           </div>
         ))}
       </Carousel>
