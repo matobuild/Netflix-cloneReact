@@ -11,6 +11,8 @@ export enum ListType {
   list = "list",
   movieDiscover = "discover/movie",
   tvDiscover = "discover/tv",
+  newAndPopular = "person/popular",
+  trending = "trending/all/day",
 }
 
 export const API_KEY = "?api_key=9fffd9d7141016b347c2450508406f8c"
@@ -35,8 +37,8 @@ export const API_KEY = "?api_key=9fffd9d7141016b347c2450508406f8c"
 // Discover tv
 // https://api.themoviedb.org/3/discover/tv?api_key=9fffd9d7141016b347c2450508406f8c
 
-// popular
-// https://api.themoviedb.org/3/person/popular?api_key=9fffd9d7141016b347c2450508406f8c
-
 // trending
 // https://api.themoviedb.org/3/trending/movie/day?api_key=9fffd9d7141016b347c2450508406f8c
+
+// new&popular
+// https://api.themoviedb.org/3/trending/all/day?api_key=9fffd9d7141016b347c2450508406f8c

@@ -38,6 +38,16 @@ const initStore: Record<ListType, movieTypeDetails> = {
     loading: false,
     error: undefined,
   },
+  [ListType.newAndPopular]: {
+    data: [],
+    loading: false,
+    error: undefined,
+  },
+  [ListType.trending]: {
+    data: [],
+    loading: false,
+    error: undefined,
+  },
 }
 
 type movieTypeDetails = {

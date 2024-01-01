@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { MovieListServices } from "../../services/movieList"
+import { ListServices } from "../../services/movieList"
 import { useMovieListStore } from "../../store/movieList"
 import { ListType } from "../../utils/constant"
 import { MovieDetail } from "../../interface/movieList"
@@ -12,7 +12,7 @@ const MovieCardFullPage = ({ list }: MovieCardProps) => {
   const { movie, setMovieList } = useMovieListStore()
 
   const getMovieDiscoveryData = async () => {
-    const data = await MovieListServices.getMovieDiscoverList(list)
+    const data = await ListServices.getList(list)
     console.log("data", data.data)
 
     if (data && data.data) {
@@ -27,7 +27,7 @@ const MovieCardFullPage = ({ list }: MovieCardProps) => {
   useEffect(() => {
     getMovieDiscoveryData()
   }, [])
-  console.log("movie", list, movie)
+  console.log("movieCard", list, movie)
 
   return (
     <div>
