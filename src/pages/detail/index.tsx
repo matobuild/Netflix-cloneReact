@@ -1,15 +1,16 @@
 import { useLocation, useParams } from "react-router-dom"
+import DetailCard from "../../components/DetailCard/DetailCard"
 
 const DetailPage = () => {
   const { name } = useParams()
   const location = useLocation()
-  const id = location.state.id
+  const id: number = location.state.id
 
   return (
-    <>
-      <div>{id}</div>
+    <div className="bg-black text-white">
       <div>DetailPage `{name}`</div>
-    </>
+      <DetailCard id={id} />
+    </div>
   )
 }
 

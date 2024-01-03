@@ -45,3 +45,7 @@ export const API_KEY = "?api_key=9fffd9d7141016b347c2450508406f8c"
 
 // DEtails
 // https://api.themoviedb.org/3/movie/572802?api_key=9fffd9d7141016b347c2450508406f8c
+
+// todo + use local storage to save movie choice
+// searchbar, filtermovie
+// maybe impliment video feature??
