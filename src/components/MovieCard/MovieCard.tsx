@@ -51,9 +51,13 @@ const MovieCategory = ({ list }: MovieCardProps) => {
   }, [])
   console.log("movie", list, movie)
 
+  function capitalizeAndReplaceUnderscore(input: string): string {
+    const capitalized = input.charAt(0).toUpperCase() + input.slice(1)
+    return capitalized.replace(/_/g, " ")
+  }
   return (
-    <div>
-      <div className="text-3xl">{list}</div>
+    <div className="flex flex-col gap-2 m-4 pb-9">
+      <div className="text-3xl">{capitalizeAndReplaceUnderscore(list)}</div>
       <Carousel
         swipeable={true}
         draggable={true}
