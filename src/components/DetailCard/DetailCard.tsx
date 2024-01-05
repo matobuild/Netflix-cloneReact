@@ -43,16 +43,22 @@ const DetailCard = ({ id }: DetailCardProps) => {
         }}
       >
         <div className="flex items-center justify-center gap-12 h-screen w-2/4">
-          <BackButton />
-          <img
-            className="rounded-lg h-2/4"
-            src={`https://image.tmdb.org/t/p/w500${detail.data.poster_path}`}
-            alt="movie-poster"
-          />
+          <div className="flex flex-col gap-y-2">
+            <div>
+              <BackButton />
+            </div>
+            <img
+              className="rounded-lg h-2/4"
+              src={`https://image.tmdb.org/t/p/w500${detail.data.poster_path}`}
+              alt="movie-poster"
+            />
+          </div>
 
-          <div className="flex flex-col h-2/4 justify-between ">
+          <div className="flex flex-col h-2/4 justify-between gap-y-4">
             <div className="text-7xl">{detail.data.original_title}</div>
-            <div className="text-2xl italic">"{detail.data.tagline}"</div>
+            <div className="text-2xl italic">
+              {detail.data.tagline ? `"${detail.data.tagline}"` : ""}
+            </div>
             <div className="flex gap-4 text-xs">
               {detail.data.genres.map((item) => (
                 <span
@@ -78,26 +84,30 @@ const DetailCard = ({ id }: DetailCardProps) => {
             </div>
 
             <div className="flex gap-4">
-              <a
-                href={detail.data.homepage}
-                target="_blank"
-                className="group relative overflow-hidden bg-blue-600 focus:ring-4 focus:ring-blue-300 inline-flex items-center px-7 py-2.5 rounded-lg text-white justify-center"
-              >
-                <span className="z-40">{detail.data.homepage}</span>
-                <svg
-                  className="z-40 ml-2 -mr-1 w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
+              {detail.data.homepage ? (
+                <a
+                  href={detail.data.homepage}
+                  target="_blank"
+                  className="group relative overflow-hidden bg-blue-600 focus:ring-4 focus:ring-blue-300 inline-flex items-center px-7 py-2.5 rounded-lg text-white justify-center"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <div className="absolute inset-0 h-[200%] w-[200%] rotate-45 translate-x-[-70%] transition-all group-hover:scale-100 bg-white/30 group-hover:translate-x-[50%] z-20 duration-1000"></div>
-              </a>
+                  <span className="z-40">{detail.data.homepage}</span>
+                  <svg
+                    className="z-40 ml-2 -mr-1 w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <div className="absolute inset-0 h-[200%] w-[200%] rotate-45 translate-x-[-70%] transition-all group-hover:scale-100 bg-white/30 group-hover:translate-x-[50%] z-20 duration-1000"></div>
+                </a>
+              ) : (
+                ""
+              )}
               <FavoriteButton />
             </div>
           </div>

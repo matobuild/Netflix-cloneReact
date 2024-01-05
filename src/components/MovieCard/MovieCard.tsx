@@ -53,7 +53,7 @@ const MovieCategory = ({ list }: MovieCardProps) => {
 
   return (
     <div>
-      <h1>{list}</h1>
+      <div className="text-3xl">{list}</div>
       <Carousel
         swipeable={true}
         draggable={true}
