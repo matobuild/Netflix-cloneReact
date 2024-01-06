@@ -7,9 +7,10 @@ import { Link } from "react-router-dom"
 
 type MovieCardProps = {
   list: ListType
+  name: string
 }
 
-const MovieCardFullPage = ({ list }: MovieCardProps) => {
+const MovieCardFullPage = ({ list, name }: MovieCardProps) => {
   const { movie, setMovieList } = useMovieListStore()
 
   const getMovieDiscoveryData = async () => {
@@ -31,14 +32,14 @@ const MovieCardFullPage = ({ list }: MovieCardProps) => {
   console.log("movieCard", list, movie)
 
   return (
-    <div>
-      <h1>{list}</h1>
-      <div className="flex flex-wrap gap-4">
+    <div className="flex flex-col w-full justify-center ">
+      <div className="text-3xl pt-4 pl-4">{name}</div>
+      <div className="grid grid-cols-8  gap-y-4 pt-4 pb-9 pl-4">
         {movie[list].data.map((res: MovieDetail) => (
           <div key={`${list} movie ${res.title}`}>
             <Link to={`/detail/${res.title} `} state={{ id: res.id }}>
               <img
-                className="rounded-lg"
+                className="rounded-lg border-2 border-transparent hover:border-white"
                 src={`https://image.tmdb.org/t/p/w185${res.poster_path}`}
                 alt="movie_image"
               />

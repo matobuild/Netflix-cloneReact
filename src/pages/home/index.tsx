@@ -8,7 +8,7 @@ const HomePage = () => {
     <div className=" bg-black text-white w-full">
       <Navbar />
 
-      <MovieCategory list={ListType.Upcoming} />
+      <MovieCategory list={ListType.Upcoming} autoPlay={true} />
 
       <MovieCategory list={ListType.now_playing} />
 

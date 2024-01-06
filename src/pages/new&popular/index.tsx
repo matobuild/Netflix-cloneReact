@@ -6,9 +6,7 @@ const NewAndPopularPage = () => {
   return (
     <div className=" bg-black text-white w-full">
       <Navbar />
-      <div>NewAndPopularPage</div>
-
-      <MovieCardFullPage list={ListType.trending} />
+      <MovieCardFullPage list={ListType.trending} name={"New & Popular"} />
     </div>
   )
 }

@@ -11,26 +11,30 @@ import { Link } from "react-router-dom"
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 8,
-    slidesToSlide: 3, // optional, default to 1.
+    items: 7,
+    slidesToSlide: 2, // optional, default to 1.
+    partialVisibilityGutter: 40,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 5,
+    partialVisibilityGutter: 40,
     slidesToSlide: 2, // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 3,
+    partialVisibilityGutter: 40,
     slidesToSlide: 1, // optional, default to 1.
   },
 }
 
 type MovieCardProps = {
   list: ListType
+  autoPlay?: boolean
 }
 
-const MovieCategory = ({ list }: MovieCardProps) => {
+const MovieCategory = ({ list, autoPlay = false }: MovieCardProps) => {
   const { movie, setMovieList } = useMovieListStore()
 
   const getMovieData = async () => {
@@ -56,17 +60,18 @@ const MovieCategory = ({ list }: MovieCardProps) => {
     return capitalized.replace(/_/g, " ")
   }
   return (
-    <div className="flex flex-col gap-2 m-4 pb-9">
+    <div className="flex flex-col gap-y-4 pt-4 pb-9 pl-4 ">
       <div className="text-3xl">{capitalizeAndReplaceUnderscore(list)}</div>
       <Carousel
+        centerMode={true}
         swipeable={true}
         draggable={true}
         showDots={false}
         responsive={responsive}
         ssr={true} // means to render carousel on server-side.
         infinite={true}
-        autoPlay={false}
-        autoPlaySpeed={1000}
+        autoPlay={autoPlay}
+        autoPlaySpeed={900}
         keyBoardControl={true}
         customTransition="all .5"
         transitionDuration={500}
@@ -79,7 +84,7 @@ const MovieCategory = ({ list }: MovieCardProps) => {
           <div key={`${list} movie ${res.title}`}>
             <Link to={`/detail/${res.title}`} state={{ id: res.id }}>
               <img
-                className="rounded-lg"
+                className="rounded-lg border-2 border-transparent hover:border-white"
                 src={`https://image.tmdb.org/t/p/w185${res.poster_path}`}
                 alt="movie_image"
               />

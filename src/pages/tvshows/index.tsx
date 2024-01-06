@@ -6,9 +6,7 @@ const TVShowPage = () => {
   return (
     <div className=" bg-black text-white w-full">
       <Navbar />
-
-      <div>TVShowPage</div>
-      <MovieCardFullPage list={ListType.tvDiscover} />
+      <MovieCardFullPage list={ListType.tvDiscover} name={"TV Shows"} />
     </div>
   )
 }
