@@ -23,16 +23,7 @@ export const ListServices = {
       return handleResponse.error(error)
     }
   },
-  getList: async (value: ListType): Promise<IGetMovieListResponse> => {
-    try {
-      const response = await axios.get(BASE_URL + value + API_KEY)
-      console.log(response)
-      return handleResponse.success(response)
-    } catch (error: any) {
-      console.error(error)
-      return handleResponse.error(error)
-    }
-  },
+
   getListForTHatPage: async (
     value: ListType,
     pageNumber: number
