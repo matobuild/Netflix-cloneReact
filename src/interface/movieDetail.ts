@@ -1,4 +1,4 @@
-export interface DetailResponse {
+export interface MovieDetailResponse {
   adult: boolean
   backdrop_path: string
   belongs_to_collection: BelongsToCollection

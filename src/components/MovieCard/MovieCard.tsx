@@ -82,7 +82,14 @@ const MovieCategory = ({ list, autoPlay = false }: MovieCardProps) => {
       >
         {movie[list].data.map((res: MovieDetail) => (
           <div key={`${list} movie ${res.title}`}>
-            <Link to={`/detail/${res.title}`} state={{ id: res.id }}>
+            <Link
+              to={`/detail/${res.title}`}
+              state={{
+                id: res.id,
+                mediaType: res.media_type,
+                fromPage: "Movies",
+              }}
+            >
               <img
                 className="rounded-lg border-2 border-transparent hover:border-white"
                 src={`https://image.tmdb.org/t/p/w185${res.poster_path}`}

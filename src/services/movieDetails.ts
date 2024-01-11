@@ -1,19 +1,21 @@
 import axios from "axios"
-import { API_KEY, BASE_URL, MOVIE_URL } from "../utils/constant"
+import { API_KEY, BASE_URL, MOVIE_URL, TV_URL } from "../utils/constant"
 import { handleResponse } from "../utils/handleResponse"
-import { DetailResponse } from "../interface/movieDetail"
+import { MovieDetailResponse } from "../interface/movieDetail"
 
-type IGetDetailResponse = {
+type IGetMovieDetailResponse = {
   status: number | undefined
-  data?: DetailResponse
+  data?: MovieDetailResponse
 }
 
-export const DetailServices = {
-  getMovieDetail: async (id: number): Promise<IGetDetailResponse> => {
+export const MovieDetailServices = {
+  getMovieDetail: async (id: number): Promise<IGetMovieDetailResponse> => {
     try {
       const response = await axios.get(
         BASE_URL + MOVIE_URL + "/" + id + API_KEY
       )
+      console.log("movie response", response)
+
       return handleResponse.success(response)
     } catch (error: any) {
       return handleResponse.error(error)

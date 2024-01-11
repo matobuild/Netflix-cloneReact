@@ -1,7 +1,7 @@
 import { create } from "zustand"
-import { DetailResponse } from "../interface/movieDetail"
+import { MovieDetailResponse } from "../interface/movieDetail"
 
-const initDetailStore: movieTypeDetailsData = {
+const initMovieDetailStore: movieTypeDetailsData = {
   data: {
     adult: false,
     backdrop_path: "",
@@ -34,18 +34,18 @@ const initDetailStore: movieTypeDetailsData = {
 }
 
 type movieTypeDetailsData = {
-  data: DetailResponse
+  data: MovieDetailResponse
   loading: boolean
   error: null | any
 }
 
-type useDetailStoreType = {
-  detail: movieTypeDetailsData
-  setDetailStore: (value: movieTypeDetailsData) => void
+type useMovieDetailStoreType = {
+  movieDetail: movieTypeDetailsData
+  setMovieDetailStore: (value: movieTypeDetailsData) => void
 }
 
-export const useDetailStore = create<useDetailStoreType>((set) => ({
-  detail: initDetailStore,
-  setDetailStore: (value: movieTypeDetailsData) =>
-    set(() => ({ detail: value })),
+export const useMovieDetailStore = create<useMovieDetailStoreType>((set) => ({
+  movieDetail: initMovieDetailStore,
+  setMovieDetailStore: (value: movieTypeDetailsData) =>
+    set(() => ({ movieDetail: value })),
 }))

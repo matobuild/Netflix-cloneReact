@@ -26,4 +26,9 @@ export interface MovieDetail {
   video: boolean
   vote_average: number
   vote_count: number
+  media_type: string
+  name?: string
+  original_name?: string
+  first_air_date?: string
+  origin_country?: string[]
 }
