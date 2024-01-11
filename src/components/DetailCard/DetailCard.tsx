@@ -13,7 +13,7 @@ type DetailCardProps = {
   fromPage: string
 }
 
-enum detailType {
+export enum detailType {
   movie = "movie",
   tv = "tv",
 }
@@ -189,7 +189,7 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
                 <LinkButton linkUrl={tvDetail.data.homepage} />
               )}
 
-              <FavoriteButton />
+              <FavoriteButton id={id} detailTypeShown={detailTypeShown} />
             </div>
           </div>
         </div>

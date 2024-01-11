@@ -1,12 +1,60 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { detailType } from "./DetailCard/DetailCard"
 
-const FavoriteButton = () => {
+type FavoriteButtonProps = {
+  id: number
+  detailTypeShown: detailType
+}
+
+export type Favorite = {
+  id: number
+  detailTypeShown: detailType
+}
+
+const FavoriteButton = ({ id, detailTypeShown }: FavoriteButtonProps) => {
   const [fillColor, setFillColor] = useState("none")
 
   const handleClick = () => {
-    // Change the fill color when the button is clicked
-    setFillColor((prevColor) => (prevColor === "none" ? "red" : "none"))
+    setFillColor((prevColor) => {
+      if (prevColor === "none") {
+        const favoriteListString = localStorage.getItem("favorite")
+        if (favoriteListString) {
+          const favoriteList = JSON.parse(favoriteListString) as Favorite[]
+          favoriteList.push({ id, detailTypeShown })
+          localStorage.setItem("favorite", JSON.stringify(favoriteList))
+        } else {
+          localStorage.setItem(
+            "favorite",
+            JSON.stringify([{ id, detailTypeShown }])
+          )
+        }
+      } else {
+        const favoriteListString = localStorage.getItem("favorite")
+
+        if (favoriteListString) {
+          const favoriteList = JSON.parse(favoriteListString) as Favorite[]
+          const newFavoriteList = favoriteList.filter((item) => item.id !== id)
+          localStorage.setItem("favorite", JSON.stringify(newFavoriteList))
+        }
+      }
+
+      return prevColor === "none" ? "red" : "none"
+    })
+
+    console.log("handleclick")
   }
+
+  useEffect(() => {
+    const favoriteListString = localStorage.getItem("favorite")
+    if (favoriteListString) {
+      const favoriteList = JSON.parse(favoriteListString) as Favorite[]
+      const favorite = favoriteList.find((item) => item.id === id)
+      if (favorite) {
+        setFillColor("red")
+      }
+    }
+  }, [])
+
   return (
     <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ...">
       <svg

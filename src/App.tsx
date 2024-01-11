@@ -5,6 +5,7 @@ import DetailPage from "./pages/detail"
 import TVShowPage from "./pages/tvshows"
 import MovieShowPage from "./pages/movieshows"
 import NewAndPopularPage from "./pages/new&popular"
+import MyList from "./pages/myList"
 
 function App() {
   const router = createBrowserRouter([
@@ -14,6 +15,7 @@ function App() {
     { path: "/movies", element: <MovieShowPage /> },
     { path: "/newAndPopular", element: <NewAndPopularPage /> },
     { path: "/detail/:name", element: <DetailPage /> },
+    { path: "/myList", element: <MyList /> },
   ])
   return (
     <div className="">
