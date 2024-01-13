@@ -46,12 +46,13 @@ const FavoriteButton = ({ id, detailTypeShown }: FavoriteButtonProps) => {
 
   useEffect(() => {
     const favoriteListString = localStorage.getItem("favorite")
-    if (favoriteListString) {
-      const favoriteList = JSON.parse(favoriteListString) as Favorite[]
-      const favorite = favoriteList.find((item) => item.id === id)
-      if (favorite) {
-        setFillColor("red")
-      }
+    if (!favoriteListString) {
+      return
+    }
+    const favoriteList = JSON.parse(favoriteListString) as Favorite[]
+    const favorite = favoriteList.find((item) => item.id === id)
+    if (favorite) {
+      setFillColor("red")
     }
   }, [])
 

@@ -5,7 +5,7 @@ const MyList = () => {
   return (
     <div className=" bg-black text-white w-full">
       <Navbar />
-      <FavoriteFullPage />
+      <FavoriteFullPage name={"My Favorites"} />
     </div>
   )
 }

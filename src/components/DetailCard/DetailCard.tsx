@@ -6,6 +6,7 @@ import BackButton from "../BackButton"
 import { TvDetailServices } from "../../services/tvDetails"
 import { useTvDetailStore } from "../../store/tvDetail"
 import LinkButton from "../LinkButton"
+import { Genre } from "../../interface/movieDetail"
 
 type DetailCardProps = {
   id: number
@@ -17,9 +18,59 @@ export enum detailType {
   movie = "movie",
   tv = "tv",
 }
+
+// const handleGetDetailData = {
+//   movie: async (id: number) => {
+//     const data = await MovieDetailServices.getMovieDetail(id)
+//     if (!data.data) {
+//       return null
+//     }
+//     return {
+//       poster: data.data.poster_path,
+//       title: data.data.title,
+//       tagline: data.data.tagline,
+//       genres: data.data.genres,
+//       overview: data.data.overview,
+//       releaseDate: data.data.release_date,
+//       voteAverage: data.data.vote_average,
+//       vote: data.data.vote_average,
+//       homepage: data.data.homepage,
+//     }
+//   },
+//   tv: async (id: number) => {
+//     const data = await TvDetailServices.getTvDetail(id)
+//     if (!data.data) {
+//       return null
+//     }
+//     return {
+//       poster: data.data.poster_path,
+//       title: data.data.name,
+//       tagline: data.data.tagline,
+//       genres: data.data.genres,
+//       overview: data.data.overview,
+//       releaseDate: data.data.first_air_date,
+//       voteAverage: data.data.vote_average,
+//       homepage: data.data.homepage,
+//     }
+//   },
+// }
+
+// interface MovieDisplay {
+//   poster: string
+//   title: string
+//   tagline: string
+//   genres: Genre[]
+//   overview: string
+//   releaseDate: string
+//   voteAverage: number
+//   homepage: string
+// }
+
 const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
   const { movieDetail, setMovieDetailStore } = useMovieDetailStore()
   const { tvDetail, setTvDetailStore } = useTvDetailStore()
+
+  // const [movieDisplay, setMovieDisplay] = useState<MovieDisplay | null>(null)
 
   const [detailTypeShown, setDetailTypeShown] = useState<detailType>(
     detailType.movie
@@ -29,7 +80,39 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
     let data
     console.log("MEDIA TYPE IS ", mediaType)
     console.log("NAME IS ", fromPage)
+
+    // const data = await handleGetDetailData[mediaType as "movie" | "tv"](id)
+    // setMovieDisplay(data)
+
     switch (fromPage) {
+      case "My Favorites":
+        //check if it is movie or not(for new &popular)
+        if (mediaType == "movie") {
+          console.log("it is a movie")
+          data = await MovieDetailServices.getMovieDetail(id)
+          console.log("Movie data details", data.data)
+          if (data && data.data) {
+            setMovieDetailStore({
+              data: data.data,
+              loading: false,
+              error: null,
+            })
+            setDetailTypeShown(detailType.movie)
+          }
+        } else if (mediaType == "tv") {
+          data = await TvDetailServices.getTvDetail(id)
+          console.log("TV data details", data.data)
+          if (data && data.data) {
+            setTvDetailStore({
+              data: data.data,
+              loading: false,
+              error: null,
+            })
+          }
+          setDetailTypeShown(detailType.tv)
+        }
+        break
+
       case "New & Popular":
         //check if it is movie or not(for new &popular)
         if (mediaType == "movie") {
