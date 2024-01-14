@@ -11,7 +11,7 @@ type IGetMovieDetailResponse = {
 export const MovieDetailServices = {
   getMovieDetail: async (id: number): Promise<IGetMovieDetailResponse> => {
     try {
-      const response = await axios.get(MOVIE_URL + "/" + id + API_KEY)
+      const response = await axios.get(MOVIE_URL + "/" + id + "?" + API_KEY)
       console.log("movie response", response)
 
       return handleResponse.success(response)

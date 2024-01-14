@@ -13,7 +13,7 @@ export const ListServices = {
     value: ListType
   ): Promise<IGetMovieListResponse> => {
     try {
-      const response = await axios.get(MOVIE_URL + "/" + value + API_KEY)
+      const response = await axios.get(MOVIE_URL + "/" + value + "?" + API_KEY)
       console.log(response)
       return handleResponse.success(response)
     } catch (error: any) {
@@ -27,7 +27,9 @@ export const ListServices = {
     pageNumber: number
   ): Promise<IGetMovieListResponse> => {
     try {
-      const response = await axios.get(value + API_KEY + page + pageNumber)
+      const response = await axios.get(
+        value + "?" + API_KEY + page + pageNumber
+      )
       console.log(response)
       return handleResponse.success(response)
     } catch (error: any) {

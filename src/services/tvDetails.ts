@@ -11,7 +11,7 @@ type IGetTVDetailResponse = {
 export const TvDetailServices = {
   getTvDetail: async (id: number): Promise<IGetTVDetailResponse> => {
     try {
-      const response = await axios.get(TV_URL + "/" + id + API_KEY)
+      const response = await axios.get(TV_URL + "/" + id + "?" + API_KEY)
       console.log("TV response", response)
 
       return handleResponse.success(response)

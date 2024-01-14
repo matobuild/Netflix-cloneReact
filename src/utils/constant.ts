@@ -1,7 +1,7 @@
 export const BASE_URL = "https://api.themoviedb.org/3/"
 export const MOVIE_URL = "movie"
-
 export const TV_URL = "tv/"
+export const SEARCH = "search/multi?query="
 
 export enum ListType {
   now_playing = "now_playing",
@@ -16,7 +16,7 @@ export enum ListType {
 }
 export const page = "&page="
 
-export const API_KEY = "?api_key=9fffd9d7141016b347c2450508406f8c"
+export const API_KEY = "api_key=9fffd9d7141016b347c2450508406f8c"
 
 // https://api.themoviedb.org/3/movie/popular?api_key=9fffd9d7141016b347c2450508406f8c
 
@@ -48,7 +48,8 @@ export const API_KEY = "?api_key=9fffd9d7141016b347c2450508406f8c"
 // DEtails
 // https://api.themoviedb.org/3/movie/572802?api_key=9fffd9d7141016b347c2450508406f8c
 
-// todo + use local storage to save movie choice
+// SEARCHBAR
+// https://api.themoviedb.org/3/search/multi?query=NCIS&api_key=9fffd9d7141016b347c2450508406f8c
+
 // searchbar, filtermovie
 // maybe impliment video feature??
-// add the pagination to go to p2.
