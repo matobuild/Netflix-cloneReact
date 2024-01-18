@@ -247,8 +247,8 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
                   ? `"${movieDetail.data.tagline}"`
                   : ""
                 : tvDetail.data.tagline
-                ? `"${tvDetail.data.tagline}"`
-                : ""}
+                  ? `"${tvDetail.data.tagline}"`
+                  : ""}
             </div>
             <div className="flex gap-4 text-xs">
               {detailTypeShown == detailType.movie

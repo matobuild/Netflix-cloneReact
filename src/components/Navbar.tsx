@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom"
 import SearchBar from "./SearchBar"
+import { useLocation } from "react-router-dom"
 
 const Navbar = () => {
+  const location = useLocation()
+  console.log("LOCATION", location)
+
   return (
-    <nav className="bg-g=black dark:bg-gray-900  w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <nav className="bg-gray-900  w-full z-20 top-0 start-0 border-b border-gray-600">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           to={`/homepage`}
@@ -14,7 +18,7 @@ const Navbar = () => {
             className="h-8"
             alt="Flowbite Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
             NetFLIX
           </span>
         </Link>
@@ -23,11 +27,15 @@ const Navbar = () => {
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col items-center p-4 md:p-0 mt-4 font-medium border rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900  bg-gray-800  border-gray-700">
             <li>
               <Link
                 to={`/homepage`}
-                className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                className={
+                  location.pathname === "/homepage"
+                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                }
                 aria-current="page"
               >
                 Home
@@ -36,15 +44,23 @@ const Navbar = () => {
             <li>
               <Link
                 to={`/tvShow`}
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className={
+                  location.pathname === "/tvShow"
+                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                }
               >
-                TV Shows
+                Tv Shows
               </Link>
             </li>
             <li>
               <Link
                 to={`/movies`}
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className={
+                  location.pathname === "/movies"
+                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                }
               >
                 Movies
               </Link>
@@ -52,7 +68,11 @@ const Navbar = () => {
             <li>
               <Link
                 to={`/newAndPopular`}
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className={
+                  location.pathname === "/newAndPopular"
+                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                }
               >
                 New & Popular
               </Link>
@@ -60,7 +80,11 @@ const Navbar = () => {
             <li>
               <Link
                 to={`/myList`}
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className={
+                  location.pathname === "/myList"
+                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                }
               >
                 My List
               </Link>
@@ -69,9 +93,13 @@ const Navbar = () => {
             <li>
               <Link
                 to={`/searchPage`}
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className={
+                  location.pathname === "/searchPage"
+                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                }
               >
-                SEARCH
+                Search
               </Link>
             </li>
           </ul>
