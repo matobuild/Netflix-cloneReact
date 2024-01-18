@@ -82,26 +82,49 @@ const FavoriteFullPage = ({ name }: FavoriteFullPageProps) => {
   return (
     <div className="flex flex-col w-full h-screen justify-start">
       <div className="text-3xl pt-4 pl-4">{name}</div>
-      <div className="grid grid-cols-8  gap-y-4 pt-4 pb-9 pl-4">
-        {favoriteList.map((favorite) => (
-          <div key={`---${name} ${favorite.id}`}>
-            <Link
-              to={`/detail/${favorite.title} `}
-              state={{
-                id: favorite.id,
-                mediaType: favorite.mediaType,
-                fromPage: name,
-              }}
-            >
-              <img
-                className="rounded-lg border-2 border-transparent hover:border-white"
-                src={`https://image.tmdb.org/t/p/w185${favorite.posterPath}`}
-                alt="movie_image"
-              />
-            </Link>
-          </div>
-        ))}
-      </div>
+
+      {favoriteList.length != 0 ? (
+        <div className="grid grid-cols-8  gap-y-4 pt-4 pb-9 pl-4">
+          {favoriteList.map((favorite) => (
+            <div key={`---${name} ${favorite.id}`}>
+              <Link
+                to={`/detail/${favorite.title} `}
+                state={{
+                  id: favorite.id,
+                  mediaType: favorite.mediaType,
+                  fromPage: name,
+                }}
+              >
+                <img
+                  className="rounded-lg border-2 border-transparent hover:border-white"
+                  src={`https://image.tmdb.org/t/p/w185${favorite.posterPath}`}
+                  alt="movie_image"
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className=" pt-4 pl-4">
+          Click on the{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 inline-block text-red-500"
+            fill="red"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            onClick={() => {}}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+            />
+          </svg>{" "}
+          icon to add them to your favorite list.
+        </div>
+      )}
     </div>
   )
 }

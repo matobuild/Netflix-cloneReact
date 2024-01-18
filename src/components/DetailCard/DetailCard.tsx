@@ -85,6 +85,34 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
     // setMovieDisplay(data)
 
     switch (fromPage) {
+      case "searchPage":
+        //check if it is movie or not(for new &popular)
+        if (mediaType == "movie") {
+          console.log("it is a movie")
+          data = await MovieDetailServices.getMovieDetail(id)
+          console.log("Movie data details", data.data)
+          if (data && data.data) {
+            setMovieDetailStore({
+              data: data.data,
+              loading: false,
+              error: null,
+            })
+            setDetailTypeShown(detailType.movie)
+          }
+        } else if (mediaType == "tv") {
+          data = await TvDetailServices.getTvDetail(id)
+          console.log("TV data details", data.data)
+          if (data && data.data) {
+            setTvDetailStore({
+              data: data.data,
+              loading: false,
+              error: null,
+            })
+          }
+          setDetailTypeShown(detailType.tv)
+        }
+        break
+
       case "My Favorites":
         //check if it is movie or not(for new &popular)
         if (mediaType == "movie") {
