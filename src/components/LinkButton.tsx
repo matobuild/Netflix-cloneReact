@@ -6,11 +6,11 @@ const LinkButton = ({ linkUrl }: LinkButtonProps) => {
     <a
       href={linkUrl}
       target="_blank"
-      className="group relative overflow-hidden bg-blue-600 focus:ring-4 focus:ring-blue-300 inline-flex items-center px-7 py-2.5 rounded-lg text-white justify-center"
+      className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-blue-600 px-7 py-2.5 text-white focus:ring-4 focus:ring-blue-300"
     >
       <span className="z-40">{linkUrl}</span>
       <svg
-        className="z-40 ml-2 -mr-1 w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
+        className="z-40 -mr-1 ml-2 h-3 w-3 transition-all duration-300 group-hover:translate-x-1"
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ const LinkButton = ({ linkUrl }: LinkButtonProps) => {
           clip-rule="evenodd"
         ></path>
       </svg>
-      <div className="absolute inset-0 h-[200%] w-[200%] rotate-45 translate-x-[-70%] transition-all group-hover:scale-100 bg-white/30 group-hover:translate-x-[50%] z-20 duration-1000"></div>
+      <div className="absolute inset-0 z-20 h-[200%] w-[200%] translate-x-[-70%] rotate-45 bg-white/30 transition-all duration-1000 group-hover:translate-x-[50%] group-hover:scale-100"></div>
     </a>
   )
 }

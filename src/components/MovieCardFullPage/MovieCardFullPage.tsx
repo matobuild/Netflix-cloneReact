@@ -34,9 +34,9 @@ const MovieCardFullPage = ({ list, name }: MovieCardProps) => {
   console.log("mvlist", mvList)
 
   return (
-    <div className="flex flex-col w-full justify-center ">
-      <div className="text-3xl pt-4 pl-4">{name}</div>
-      <div className="grid grid-cols-8  gap-y-4 pt-4 pb-9 pl-4">
+    <div className="flex w-full flex-col justify-center ">
+      <div className="pl-4 pt-4 text-3xl">{name}</div>
+      <div className="grid grid-cols-8  gap-y-4 pb-9 pl-4 pt-4">
         {mvList.map((res: MovieDetail) => (
           <div key={`${list} ---${name} ${res.id}`}>
             {console.log("name", name)}

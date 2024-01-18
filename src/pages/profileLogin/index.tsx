@@ -6,9 +6,9 @@ import { Link } from "react-router-dom"
 
 const ProfilePage = () => {
   return (
-    <div className="bg-black h-screen flex flex-col items-center justify-center">
-      <h1 className="text-gray-200 text-5xl">Who's watching</h1>
-      <div className="flex flex-row gap-5 mt-8">
+    <div className="flex h-screen flex-col items-center justify-center bg-black">
+      <h1 className="text-5xl text-gray-200">Who's watching</h1>
+      <div className="mt-8 flex flex-row gap-5">
         {persons.map((item, index) => {
           return (
             <Link to={`/homepage`}>
@@ -23,7 +23,7 @@ const ProfilePage = () => {
         })}
       </div>
 
-      <button className="border-2 border-gray-600 text-gray-600 px-4 py-1 mt-20 hover:border-gray-400 hover:text-gray-400">
+      <button className="mt-20 border-2 border-gray-600 px-4 py-1 text-gray-600 hover:border-gray-400 hover:text-gray-400">
         Manage Profiles
       </button>
     </div>

@@ -4,7 +4,7 @@ import { ListType } from "../../utils/constant"
 
 const NewAndPopularPage = () => {
   return (
-    <div className=" bg-black text-white w-full">
+    <div className=" w-full bg-black text-white">
       <Navbar />
       <MovieCardFullPage list={ListType.trending} name={"New & Popular"} />
     </div>

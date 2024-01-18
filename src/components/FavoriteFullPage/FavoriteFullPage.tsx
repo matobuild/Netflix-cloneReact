@@ -80,11 +80,11 @@ const FavoriteFullPage = ({ name }: FavoriteFullPageProps) => {
   console.log("favDATA", favoriteList)
 
   return (
-    <div className="flex flex-col w-full h-screen justify-start">
-      <div className="text-3xl pt-4 pl-4">{name}</div>
+    <div className="flex h-screen w-full flex-col justify-start">
+      <div className="pl-4 pt-4 text-3xl">{name}</div>
 
       {favoriteList.length != 0 ? (
-        <div className="grid grid-cols-8  gap-y-4 pt-4 pb-9 pl-4">
+        <div className="grid grid-cols-8  gap-y-4 pb-9 pl-4 pt-4">
           {favoriteList.map((favorite) => (
             <div key={`---${name} ${favorite.id}`}>
               <Link
@@ -105,11 +105,11 @@ const FavoriteFullPage = ({ name }: FavoriteFullPageProps) => {
           ))}
         </div>
       ) : (
-        <div className=" pt-4 pl-4">
+        <div className=" pl-4 pt-4">
           Click on the{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 inline-block text-red-500"
+            className="inline-block h-6 w-6 text-red-500"
             fill="red"
             viewBox="0 0 24 24"
             stroke="currentColor"

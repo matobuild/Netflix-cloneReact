@@ -73,7 +73,7 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
   // const [movieDisplay, setMovieDisplay] = useState<MovieDisplay | null>(null)
 
   const [detailTypeShown, setDetailTypeShown] = useState<detailType>(
-    detailType.movie
+    detailType.movie,
   )
 
   const getDetailData = async () => {
@@ -205,7 +205,7 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
   return (
     <>
       <section
-        className="h-screen bg-black bg-cover text-white flex justify-center items-center "
+        className="flex h-screen items-center justify-center bg-black bg-cover text-white "
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0 , 0, 0, 0.1), rgba(0, 0, 0, 1)),
           
@@ -219,13 +219,13 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
           })`,
         }}
       >
-        <div className="flex items-center justify-center gap-12 h-screen w-2/4">
+        <div className="flex h-screen w-2/4 items-center justify-center gap-12">
           <div className="flex flex-col gap-y-2">
             <div>
               <BackButton />
             </div>
             <img
-              className="rounded-lg h-2/4"
+              className="h-2/4 rounded-lg"
               src={`https://image.tmdb.org/t/p/w500${
                 detailTypeShown == detailType.movie
                   ? movieDetail.data.poster_path
@@ -235,7 +235,7 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
             />
           </div>
 
-          <div className="flex flex-col h-2/4 justify-between gap-y-4">
+          <div className="flex h-2/4 flex-col justify-between gap-y-4">
             <div className="text-7xl">
               {detailTypeShown == detailType.movie
                 ? movieDetail.data.original_title
@@ -254,7 +254,7 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
               {detailTypeShown == detailType.movie
                 ? movieDetail.data.genres.map((item) => (
                     <span
-                      className=" border-white rounded-lg border px-4"
+                      className=" rounded-lg border border-white px-4"
                       key={item.name}
                     >
                       {item.name}
@@ -262,7 +262,7 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
                   ))
                 : tvDetail.data.genres.map((item) => (
                     <span
-                      className=" border-white rounded-lg border px-4"
+                      className=" rounded-lg border border-white px-4"
                       key={item.name}
                     >
                       {item.name}

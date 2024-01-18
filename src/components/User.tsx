@@ -8,9 +8,9 @@ type UserProps = {
 
 export const User = ({ name, imageSource, locked }: UserProps) => {
   return (
-    <div className="flex flex-col items-center group gap-2">
+    <div className="group flex flex-col items-center gap-2">
       <img
-        className="h-36 w-36 rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 object-"
+        className="object- h-36 w-36 rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300"
         src={imageSource}
         alt="userPhoto"
       />
@@ -24,7 +24,7 @@ export const User = ({ name, imageSource, locked }: UserProps) => {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              className="w-5 h-5"
+              className="h-5 w-5"
             >
               <path
                 stroke-linecap="round"

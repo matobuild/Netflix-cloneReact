@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar"
 
 const MyList = () => {
   return (
-    <div className=" bg-black text-white w-full">
+    <div className=" w-full bg-black text-white">
       <Navbar />
       <FavoriteFullPage name={"My Favorites"} />
     </div>

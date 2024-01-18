@@ -37,13 +37,13 @@ const SearchFullPage = ({ control }: SearchFullPageProps) => {
   }, [searchKey])
 
   return (
-    <div className="flex flex-col w-full pb-9 justify-start ">
+    <div className="flex w-full flex-col justify-start pb-9 ">
       {searchKey !== undefined && searchKey !== "" && (
-        <div className="text-3xl pt-4 pl-4">{'"' + searchKey + '"'}</div>
+        <div className="pl-4 pt-4 text-3xl">{'"' + searchKey + '"'}</div>
       )}
 
       {searchKey !== undefined && searchKey !== "" ? (
-        <div className="grid grid-cols-8  gap-y-4 pt-4 pb-9 pl-4 ">
+        <div className="grid grid-cols-8  gap-y-4 pb-9 pl-4 pt-4 ">
           {searchList.map((item: Result) => {
             return (
               <div key={item.id}>
@@ -66,7 +66,7 @@ const SearchFullPage = ({ control }: SearchFullPageProps) => {
           })}
         </div>
       ) : (
-        <div className=" pt-4 pl-4 h-screen">
+        <div className=" h-screen pl-4 pt-4">
           Discover your next movie or TV show right here! 🎬✨ Simply search and
           let the entertainment journey begin. your choice awaits! 🍿🔍
           #SearchAndEnjoy

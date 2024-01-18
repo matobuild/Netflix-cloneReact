@@ -10,7 +10,7 @@ const DetailPage = () => {
   const fromPage = location.state.fromPage
 
   return (
-    <div className="bg-black text-white w-full">
+    <div className="w-full bg-black text-white">
       <Navbar />
       <div>DetailPage `{name}`</div>
       <div>`{mediaType}`</div>

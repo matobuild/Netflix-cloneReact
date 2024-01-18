@@ -25,7 +25,7 @@ const FavoriteButton = ({ id, detailTypeShown }: FavoriteButtonProps) => {
         } else {
           localStorage.setItem(
             "favorite",
-            JSON.stringify([{ id, detailTypeShown }])
+            JSON.stringify([{ id, detailTypeShown }]),
           )
         }
       } else {
@@ -57,7 +57,7 @@ const FavoriteButton = ({ id, detailTypeShown }: FavoriteButtonProps) => {
   }, [])
 
   return (
-    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ...">
+    <button className="... transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"

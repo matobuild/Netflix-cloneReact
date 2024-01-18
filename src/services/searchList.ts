@@ -11,7 +11,7 @@ type IGetSearchListResponse = {
 
 export const SearchService = {
   getSearchPageList: async (
-    keyword: string
+    keyword: string,
   ): Promise<IGetSearchListResponse> => {
     try {
       const response = await axios.get(SEARCH + keyword + "&" + API_KEY)

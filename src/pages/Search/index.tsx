@@ -7,7 +7,7 @@ const SearchPage = () => {
   const { control, register, handleSubmit } = useForm()
 
   return (
-    <div className=" bg-black text-white w-full">
+    <div className=" w-full bg-black text-white">
       <Navbar />
       <SearchBar register={register} handleSubmit={handleSubmit} />
       <SearchFullPage control={control} />

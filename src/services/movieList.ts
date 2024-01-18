@@ -10,7 +10,7 @@ type IGetMovieListResponse = {
 
 export const ListServices = {
   getMovieHomePageList: async (
-    value: ListType
+    value: ListType,
   ): Promise<IGetMovieListResponse> => {
     try {
       const response = await axios.get(MOVIE_URL + "/" + value + "?" + API_KEY)
@@ -24,11 +24,11 @@ export const ListServices = {
 
   getListForTHatPage: async (
     value: ListType,
-    pageNumber: number
+    pageNumber: number,
   ): Promise<IGetMovieListResponse> => {
     try {
       const response = await axios.get(
-        value + "?" + API_KEY + page + pageNumber
+        value + "?" + API_KEY + page + pageNumber,
       )
       console.log(response)
       return handleResponse.success(response)

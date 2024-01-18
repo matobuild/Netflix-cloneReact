@@ -7,8 +7,8 @@ const Navbar = () => {
   console.log("LOCATION", location)
 
   return (
-    <nav className="bg-gray-900  w-full z-20 top-0 start-0 border-b border-gray-600">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="start-0  top-0 z-20 w-full border-b border-gray-600 bg-gray-900">
+      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <Link
           to={`/homepage`}
           className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -18,23 +18,23 @@ const Navbar = () => {
             className="h-8"
             alt="Flowbite Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
+          <span className="self-center whitespace-nowrap text-2xl font-semibold text-white">
             NetFLIX
           </span>
         </Link>
 
         <div
-          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
           id="navbar-sticky"
         >
-          <ul className="flex flex-col items-center p-4 md:p-0 mt-4 font-medium border rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900  bg-gray-800  border-gray-700">
+          <ul className="mt-4 flex flex-col items-center rounded-lg border border-gray-700 bg-gray-800 p-4  font-medium rtl:space-x-reverse md:mt-0 md:flex-row md:space-x-8 md:border-0  md:bg-gray-900  md:p-0">
             <li>
               <Link
                 to={`/homepage`}
                 className={
                   location.pathname === "/homepage"
-                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
-                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                    ? "block rounded bg-blue-700 px-3 py-2 text-lg text-white md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block rounded border-gray-700 px-3  py-2 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
                 }
                 aria-current="page"
               >
@@ -46,8 +46,8 @@ const Navbar = () => {
                 to={`/tvShow`}
                 className={
                   location.pathname === "/tvShow"
-                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
-                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                    ? "block rounded bg-blue-700 px-3 py-2 text-lg text-white md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block rounded border-gray-700 px-3  py-2 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
                 }
               >
                 Tv Shows
@@ -58,8 +58,8 @@ const Navbar = () => {
                 to={`/movies`}
                 className={
                   location.pathname === "/movies"
-                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
-                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                    ? "block rounded bg-blue-700 px-3 py-2 text-lg text-white md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block rounded border-gray-700 px-3  py-2 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
                 }
               >
                 Movies
@@ -70,8 +70,8 @@ const Navbar = () => {
                 to={`/newAndPopular`}
                 className={
                   location.pathname === "/newAndPopular"
-                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
-                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                    ? "block rounded bg-blue-700 px-3 py-2 text-lg text-white md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block rounded border-gray-700 px-3  py-2 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
                 }
               >
                 New & Popular
@@ -82,8 +82,8 @@ const Navbar = () => {
                 to={`/myList`}
                 className={
                   location.pathname === "/myList"
-                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
-                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                    ? "block rounded bg-blue-700 px-3 py-2 text-lg text-white md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block rounded border-gray-700 px-3  py-2 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
                 }
               >
                 My List
@@ -95,8 +95,8 @@ const Navbar = () => {
                 to={`/searchPage`}
                 className={
                   location.pathname === "/searchPage"
-                    ? "block py-2 px-3 text-lg text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500"
-                    : "block py-2 px-3 rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                    ? "block rounded bg-blue-700 px-3 py-2 text-lg text-white md:bg-transparent md:p-0 md:text-blue-500"
+                    : "block rounded border-gray-700 px-3  py-2 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
                 }
               >
                 Search
