@@ -6,9 +6,9 @@ import { Link } from "react-router-dom"
 
 const ProfilePage = () => {
   return (
-    <div className="flex h-screen flex-col items-center justify-center bg-black">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-black p-9">
       <h1 className="text-5xl text-gray-200">Who's watching</h1>
-      <div className="mt-8 flex flex-row gap-5">
+      <div className="mt-8 flex flex-col gap-5 sm:flex sm:flex-row">
         {persons.map((item, index) => {
           return (
             <Link to={`/homepage`}>

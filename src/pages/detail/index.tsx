@@ -10,10 +10,10 @@ const DetailPage = () => {
   const fromPage = location.state.fromPage
 
   return (
-    <div className="w-full bg-black text-white">
+    <div className="h-full w-full bg-black text-white sm:pb-44">
       <Navbar />
-      <div>DetailPage `{name}`</div>
-      <div>`{mediaType}`</div>
+      {/* <div>DetailPage `{name}`</div> */}
+      {/* <div>`{mediaType}`</div> */}
       <DetailCard id={id} mediaType={mediaType} fromPage={fromPage} />
     </div>
   )

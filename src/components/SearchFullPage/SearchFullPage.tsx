@@ -37,13 +37,15 @@ const SearchFullPage = ({ control }: SearchFullPageProps) => {
   }, [searchKey])
 
   return (
-    <div className="flex w-full flex-col justify-start pb-9 ">
+    <div className="flex h-screen w-full flex-col justify-start pb-9">
       {searchKey !== undefined && searchKey !== "" && (
-        <div className="pl-4 pt-4 text-3xl">{'"' + searchKey + '"'}</div>
+        <div className="pl-4 pt-4 text-2xl sm:text-3xl">
+          {'"' + searchKey + '"'}
+        </div>
       )}
 
       {searchKey !== undefined && searchKey !== "" ? (
-        <div className="grid grid-cols-8  gap-y-4 pb-9 pl-4 pt-4 ">
+        <div className="grid grid-cols-4 gap-1 pb-9 pl-4 pr-4 pt-4 sm:grid-cols-8 sm:gap-2">
           {searchList.map((item: Result) => {
             return (
               <div key={item.id}>
@@ -56,7 +58,7 @@ const SearchFullPage = ({ control }: SearchFullPageProps) => {
                   }}
                 >
                   <img
-                    className="rounded-lg border-2 border-transparent hover:border-white"
+                    className="w-full rounded-lg border-2 border-transparent hover:border-white"
                     src={`https://image.tmdb.org/t/p/w185${item.poster_path}`}
                     alt="movie_image"
                   />

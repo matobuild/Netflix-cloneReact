@@ -11,6 +11,12 @@
   border-radius: 4px;
   padding: 5px;
 }
+@media only screen and (max-width: 600px) {
+  .pagination {
+    flex-direction: column;
+    margin-bottom: 0rem;
+  }
+}
 
 .pagination .page-num {
   padding: 8px 15px;

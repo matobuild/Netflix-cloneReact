@@ -35,8 +35,8 @@ const MovieCardFullPage = ({ list, name }: MovieCardProps) => {
 
   return (
     <div className="flex w-full flex-col justify-center ">
-      <div className="pl-4 pt-4 text-3xl">{name}</div>
-      <div className="grid grid-cols-8  gap-y-4 pb-9 pl-4 pt-4">
+      <div className="pl-4 pt-4 text-xl sm:text-3xl">{name}</div>
+      <div className="grid grid-cols-4 gap-1 pb-9 pl-4 pr-4 pt-4 sm:grid-cols-8 sm:gap-2">
         {mvList.map((res: MovieDetail) => (
           <div key={`${list} ---${name} ${res.id}`}>
             {console.log("name", name)}
@@ -45,7 +45,7 @@ const MovieCardFullPage = ({ list, name }: MovieCardProps) => {
               state={{ id: res.id, mediaType: res.media_type, fromPage: name }}
             >
               <img
-                className="rounded-lg border-2 border-transparent hover:border-white"
+                className="w-full rounded-lg border-2 border-transparent hover:border-white"
                 src={`https://image.tmdb.org/t/p/w185${res.poster_path}`}
                 alt="movie_image"
               />

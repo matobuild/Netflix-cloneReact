@@ -81,10 +81,10 @@ const FavoriteFullPage = ({ name }: FavoriteFullPageProps) => {
 
   return (
     <div className="flex h-screen w-full flex-col justify-start">
-      <div className="pl-4 pt-4 text-3xl">{name}</div>
+      <div className="pl-4 pt-4 text-xl sm:text-3xl">{name}</div>
 
       {favoriteList.length != 0 ? (
-        <div className="grid grid-cols-8  gap-y-4 pb-9 pl-4 pt-4">
+        <div className="grid grid-cols-4 gap-1 pb-9 pl-4 pr-4 pt-4 sm:grid-cols-8 sm:gap-2">
           {favoriteList.map((favorite) => (
             <div key={`---${name} ${favorite.id}`}>
               <Link
@@ -96,7 +96,7 @@ const FavoriteFullPage = ({ name }: FavoriteFullPageProps) => {
                 }}
               >
                 <img
-                  className="rounded-lg border-2 border-transparent hover:border-white"
+                  className="w-full rounded-lg border-2 border-transparent hover:border-white"
                   src={`https://image.tmdb.org/t/p/w185${favorite.posterPath}`}
                   alt="movie_image"
                 />

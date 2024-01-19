@@ -61,7 +61,9 @@ const MovieCategory = ({ list, autoPlay = false }: MovieCardProps) => {
   }
   return (
     <div className="flex flex-col gap-y-4 pb-9 pl-4 pt-4 ">
-      <div className="text-3xl">{capitalizeAndReplaceUnderscore(list)}</div>
+      <div className="text-xl sm:text-3xl">
+        {capitalizeAndReplaceUnderscore(list)}
+      </div>
       <Carousel
         centerMode={true}
         swipeable={true}

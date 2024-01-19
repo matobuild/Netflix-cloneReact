@@ -24,7 +24,7 @@ const Navbar = () => {
         </Link>
 
         <div
-          className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
+          className=" w-full items-center justify-between md:order-1 md:flex md:w-auto"
           id="navbar-sticky"
         >
           <ul className="mt-4 flex flex-col items-center rounded-lg border border-gray-700 bg-gray-800 p-4  font-medium rtl:space-x-reverse md:mt-0 md:flex-row md:space-x-8 md:border-0  md:bg-gray-900  md:p-0">

@@ -205,7 +205,7 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
   return (
     <>
       <section
-        className="flex h-screen items-center justify-center bg-black bg-cover text-white "
+        className="flex items-center justify-center bg-black bg-cover pb-44 text-white sm:h-screen"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0 , 0, 0, 0.1), rgba(0, 0, 0, 1)),
           
@@ -219,13 +219,14 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
           })`,
         }}
       >
-        <div className="flex h-screen w-2/4 items-center justify-center gap-12">
+        {/* <div className="p4 h-screen w-max items-center justify-center gap-12 p-4 pt-4 sm:flex sm:w-2/4"> */}
+        <div className="p4 w-max items-start justify-center gap-12 p-4 pt-4 sm:grid sm:h-2/4 sm:w-2/4 sm:grid-cols-2 ">
           <div className="flex flex-col gap-y-2">
             <div>
               <BackButton />
             </div>
             <img
-              className="h-2/4 rounded-lg"
+              className="h-2/4 w-screen rounded-lg"
               src={`https://image.tmdb.org/t/p/w500${
                 detailTypeShown == detailType.movie
                   ? movieDetail.data.poster_path
@@ -235,8 +236,8 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
             />
           </div>
 
-          <div className="flex h-2/4 flex-col justify-between gap-y-4">
-            <div className="text-7xl">
+          <div className="flex h-max flex-col justify-between gap-y-2 pb-4 pt-4 sm:h-2/4 sm:gap-y-1">
+            <div className="text-3xl sm:text-7xl">
               {detailTypeShown == detailType.movie
                 ? movieDetail.data.original_title
                 : tvDetail.data.name}
@@ -274,7 +275,7 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
                 ? movieDetail.data.overview
                 : tvDetail.data.overview}
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 py-2">
               <div>
                 <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-sm text-purple-700">
                   Release{" "}
@@ -293,9 +294,13 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="mb-6 flex gap-4 py-2">
               {detailTypeShown == detailType.movie ? (
-                <LinkButton linkUrl={movieDetail.data.homepage} />
+                movieDetail.data.homepage != "" ? (
+                  <LinkButton linkUrl={movieDetail.data.homepage} />
+                ) : (
+                  ""
+                )
               ) : (
                 <LinkButton linkUrl={tvDetail.data.homepage} />
               )}
@@ -306,7 +311,7 @@ const DetailCard = ({ id, mediaType, fromPage }: DetailCardProps) => {
         </div>
       </section>
 
-      <div>{id}</div>
+      {/* <div>{id}</div> */}
     </>
   )
 }
