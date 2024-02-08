@@ -6,7 +6,7 @@ import BackButton from "../BackButton"
 import { TvDetailServices } from "../../services/tvDetails"
 import { useTvDetailStore } from "../../store/tvDetail"
 import LinkButton from "../LinkButton"
-import { Genre } from "../../interface/movieDetail"
+// import { Genre } from "../../interface/movieDetail"
 
 type DetailCardProps = {
   id: number

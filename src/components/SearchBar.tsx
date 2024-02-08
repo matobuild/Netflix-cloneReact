@@ -1,10 +1,8 @@
-import { useForm } from "react-hook-form"
-
 const SearchBar = (props: any) => {
   const { register, handleSubmit } = props
 
   // Function to handle form submission
-  const onSubmit = (data) => {
+  const onSubmit = (data: string) => {
     console.log("Search query:", data.search)
   }
 

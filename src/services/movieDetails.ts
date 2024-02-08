@@ -1,5 +1,5 @@
 import axios from "../configuration/axios"
-import { API_KEY, BASE_URL, MOVIE_URL, TV_URL } from "../utils/constant"
+import { API_KEY, MOVIE_URL } from "../utils/constant"
 import { handleResponse } from "../utils/handleResponse"
 import { MovieDetailResponse } from "../interface/movieDetail"
 

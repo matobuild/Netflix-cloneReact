@@ -32,6 +32,7 @@ const MovieCardFullPage = ({ list, name }: MovieCardProps) => {
     getMovieList(list, 1)
   }, [])
   console.log("mvlist", mvList)
+  console.log("total page", totalPage)
 
   return (
     <div className="flex w-full flex-col justify-center ">
@@ -39,7 +40,7 @@ const MovieCardFullPage = ({ list, name }: MovieCardProps) => {
       <div className="grid grid-cols-4 gap-1 pb-9 pl-4 pr-4 pt-4 sm:grid-cols-8 sm:gap-2">
         {mvList.map((res: MovieDetail) => (
           <div key={`${list} ---${name} ${res.id}`}>
-            {console.log("name", name)}
+            {/* {console.log("name", name)} */}
             <Link
               to={`/detail/${res.title} `}
               state={{ id: res.id, mediaType: res.media_type, fromPage: name }}
@@ -63,6 +64,7 @@ const MovieCardFullPage = ({ list, name }: MovieCardProps) => {
           }}
           pageRangeDisplayed={3}
           pageCount={99}
+          // pageCount={totalPage}
           previousLabel="Previous"
           renderOnZeroPageCount={null}
           containerClassName={"pagination"}

@@ -9,7 +9,7 @@ type SearchFullPageProps = {
 }
 
 const SearchFullPage = ({ control }: SearchFullPageProps) => {
-  const [searchList, setSearchList] = useState([])
+  const [searchList, setSearchList] = useState<Result[]>([])
 
   const searchKey = useWatch({ control, name: "search" })
   console.log("SEACHKEY", searchKey)

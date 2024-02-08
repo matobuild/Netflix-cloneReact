@@ -1,9 +1,9 @@
-import { useLocation, useParams } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import DetailCard from "../../components/DetailCard/DetailCard"
 import Navbar from "../../components/Navbar"
 
 const DetailPage = () => {
-  const { name } = useParams()
+  // const { name } = useParams() is from "react-router-dom
   const location = useLocation()
   const id: number = location.state.id
   const mediaType = location.state.mediaType

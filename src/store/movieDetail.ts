@@ -5,7 +5,12 @@ const initMovieDetailStore: movieTypeDetailsData = {
   data: {
     adult: false,
     backdrop_path: "",
-    belongs_to_collection: undefined,
+    belongs_to_collection: {
+      id: 0,
+      name: "",
+      poster_path: "",
+      backdrop_path: "",
+    },
     budget: 0,
     genres: [],
     homepage: "",

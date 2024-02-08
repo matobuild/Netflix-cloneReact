@@ -1,5 +1,3 @@
-import React from "react"
-
 type UserProps = {
   name: string
   imageSource: string

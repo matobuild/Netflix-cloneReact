@@ -1,6 +1,6 @@
 import axios from "../configuration/axios"
 import { TVDetailResponse } from "../interface/TvDetails"
-import { API_KEY, BASE_URL, TV_URL } from "../utils/constant"
+import { API_KEY, TV_URL } from "../utils/constant"
 import { handleResponse } from "../utils/handleResponse"
 
 type IGetTVDetailResponse = {

@@ -1,7 +1,5 @@
-import React from "react"
 import { User } from "../../components/User"
 import { persons } from "../../assets/constant"
-import Button from "../../components/Button"
 import { Link } from "react-router-dom"
 
 const ProfilePage = () => {

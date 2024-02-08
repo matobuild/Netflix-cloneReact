@@ -1,5 +1,5 @@
 import axios from "../configuration/axios"
-import { API_KEY, ListType, BASE_URL, MOVIE_URL, page } from "../utils/constant"
+import { API_KEY, ListType, MOVIE_URL, page } from "../utils/constant"
 import { handleResponse } from "../utils/handleResponse"
 import { IMovieListResponse } from "../interface/movieList"
 

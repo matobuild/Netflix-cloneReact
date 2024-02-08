@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import SearchBar from "./SearchBar"
 import { useLocation } from "react-router-dom"
 
 const Navbar = () => {

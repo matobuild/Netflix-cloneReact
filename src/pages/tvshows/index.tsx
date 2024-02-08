@@ -4,7 +4,7 @@ import { ListType } from "../../utils/constant"
 
 const TVShowPage = () => {
   return (
-    <div className=" w-full bg-black text-white">
+    <div className="w-full bg-black text-white ">
       <Navbar />
       <MovieCardFullPage list={ListType.tvDiscover} name={"TV Shows"} />
     </div>
